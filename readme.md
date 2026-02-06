@@ -63,7 +63,7 @@ LPIPS (Perceptual similarity)
 UCIQE (Underwater Image Quality Evaluation)
 
 ## Project Structure
-underwater-enhancement/
+/** underwater-enhancement/
 │
 ├── datasets/
 │   ├── inputs/
@@ -77,14 +77,15 @@ underwater-enhancement/
 ├── utils.py
 ├── requirements.txt
 └── README.md
+**/
 
 ## Setup Instructions
-1️⃣ Create Virtual Environment
+1️) Create Virtual Environment
 python -m venv venv
 source venv/bin/activate  # Linux
 venv\Scripts\activate     # Windows
 
-2️⃣ Install Dependencies
+2️) Install Dependencies
 pip install -r requirements.txt
 
 
