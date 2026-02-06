@@ -6,15 +6,11 @@ from models.unet import UNet
 from tqdm import tqdm
 from pytorch_msssim import ssim
 
-# -----------------
-# Device
-# -----------------
+
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print("Using device:", device)
 
-# -----------------
-# Dataset
-# -----------------
+
 dataset = UnderwaterDataset("datasets/inputs", "datasets/targets", augment=True)
 
 train_size = int(0.9 * len(dataset))
@@ -25,27 +21,18 @@ train_dataset, val_dataset = random_split(dataset, [train_size, val_size])
 train_loader = DataLoader(train_dataset, batch_size=16, shuffle=True)
 val_loader = DataLoader(val_dataset, batch_size=16, shuffle=False)
 
-# -----------------
-# Model
-# -----------------
+
+
 model = UNet().to(device)
 
-# -----------------
-# Loss
-# -----------------
+
 l1_loss = nn.L1Loss()
 
 def ssim_loss(pred, target):
     return 1 - ssim(pred, target, data_range=1.0, size_average=True)
 
-# -----------------
-# Optimizer
-# -----------------
 optimizer = torch.optim.AdamW(model.parameters(), lr=1e-4)
 
-# -----------------
-# Training
-# -----------------
 epochs = 40
 best_ssim = 0
 
