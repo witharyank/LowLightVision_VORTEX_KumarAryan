@@ -78,7 +78,7 @@ underwater-enhancement/
 ├── utils.py
 ├── requirements.txt
 └── README.md
-
+```
 
 ## Setup Instructions
 1️) Create Virtual Environment
