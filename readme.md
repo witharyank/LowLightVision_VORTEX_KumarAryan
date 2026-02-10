@@ -139,7 +139,7 @@ Save outputs with original filenames
 
 Zip results for submission
 
-## Author
+# Author
 
 Team VORTEX
 AI Summit 2026 Participant 
