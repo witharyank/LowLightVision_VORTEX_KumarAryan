@@ -33,7 +33,7 @@ def ssim_loss(pred, target):
 
 optimizer = torch.optim.AdamW(model.parameters(), lr=1e-4)
 
-epochs = 25
+epochs = 24
 best_ssim = 0
 
 for epoch in range(epochs):
